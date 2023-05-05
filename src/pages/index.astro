@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+
+const blogs = [
+	{
+		titulo: "Async and Await in Vanilla JavaScript",
+		date: "today",
+		read: "3 min read time",
+		img: "blog1.png"
+	},
+	{
+		titulo: "5-minute team building activities",
+		date: "today",
+		read: "10 min read time",
+		img: "blog2.png"
+	},
+	{
+		titulo: "How to Delete a File or Directory in Linux - Command to Remove a...",
+		date: "today",
+		read: "4 min read time",
+		img: "blog3.png"
+	},
+	{
+		titulo: "Dream First, Learn Later: DECKARD is an AI Approach That Uses LLMs for Training...",
+		date: "today",
+		read: "4 min read time",
+		img: "blog4.png"
+	}
+
+]
+
+---
+
+<Layout title="Blogs">
+	<main>
+		<h1 class="titulo">Clone de Daily</h1>
+		<hr>
+		<div class="containerCard">
+			{ 
+				blogs.map(blog => <Card title={blog.titulo} date={blog.date} read={blog.read} img={blog.img}/>)
+			}
+		</div>
+	</main>
+</Layout>
+
+<style>
+
+	.titulo {
+		text-align: center;
+		font-size: 30px;
+	}
+
+	.containerCard {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	
+</style>
